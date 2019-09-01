@@ -11,11 +11,15 @@ class PostsController < ApplicationController
   end
 
   def create
+    
     @post = Post.new(post_params)
-    debugger
     @post.user_id = current_user.id
     if @post.save
-      redirect_back(fallback_location: root_path)
+      respond_to do |format|
+        format.json
+      
+      # redirect_back(fallback_location: root_path)
+      end
     else
       redirect_back(fallback_location: root_path)
     end

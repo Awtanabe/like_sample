@@ -9,7 +9,7 @@
     <%= f.submit %>
   <% end %>
   <hr>
-  <h2>投稿一覧</h2>
+  <h2 class="posts">投稿一覧</h2>
   <% @posts.each do |post| %>
     <a href="/users/<%= post.user.id %>"><%= post.user.email %></a>
     <a href="/posts/<%= post.id %>"><%= post.content %></a>
